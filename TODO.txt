@@ -1,0 +1,11 @@
+Generic functions should be split into two classes
+
+- WizWalkerUtilities: A library of functions for wizwalker
+- GenericFucntions: A library of function wrappers for WizWalkerUtilities (include auto-timeout?)
+
+
+Consider pip
+
+weird glitch with bot stopping after reset, and during combat?
+consider better concurrency by putting each client on its own thread
+handle timeouts in the functions library rather than in the bot classes
