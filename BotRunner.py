@@ -38,6 +38,26 @@ from Bots.GenericWander import Wander
 	
 
 '''
+def quit(self):
+	self.running = False
+	for bot in self.bots:
+		bot.running = False
+		
+def listClients(self):
+	print(self.clients)
+		
+def listBots(self):
+	print(self.bots)
+	
+def listTypes(self):
+	for a, b in self.types:
+		print(f"{a}: {b}")
+		
+def startBot(self, i=0):
+	try:
+		self.bots[i].start()
+	except:
+		traceback.print_exc()
 		
 class BotRunner(WizSprinter):
 	def __init__(self):
@@ -66,21 +86,7 @@ class BotRunner(WizSprinter):
 		self.bots = [None] * len(self.clients)
 		self.bots = [Wander(client, id) for id, client in enumerate(self.clients)] # remove later
 		
-	def quit(self):
-		self.running = False
-		for bot in self.bots:
-			bot.running = False
-			
-	def listClients(self):
-		print(self.clients)
-			
-	def listBots(self):
-		print(self.bots)
-		
-	def listTypes(self):
-		for a, b in self.types:
-			print(f"{a}: {b}")
-			
+	
 	def startBot(self, i=0):
 		try:
 			self.bots[i].start()

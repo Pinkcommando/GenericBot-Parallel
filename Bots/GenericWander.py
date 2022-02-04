@@ -23,5 +23,5 @@ class Wander(GenericBot):
 			print(f"[{self.client.title}] cycle finished run #{self.data['count']}")
 			#self.consoleOut()
 			
-			#if self.data["count"] % 20 == 0: 
-				#yield (quickSellAllPrint, None, defaultTimeout) 
+			if self.data["count"] % 20 == 2: 
+				yield (quickSellAll, None, defaultTimeout) 
